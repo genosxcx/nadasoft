@@ -1,0 +1,162 @@
+<div class="portfolio" [dir]="textDirection">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="header-title">{{ currentContent.title }}</div>
+      <div class="language-switcher">
+        <button
+          *ngFor="let lang of languages"
+          [class.active]="language === lang.code"
+          (click)="changeLanguage(lang.code)"
+          class="lang-btn"
+        >
+          {{ lang.label }}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">{{ currentContent.title }}</h1>
+        <h2 class="hero-subtitle">{{ currentContent.subtitle }}</h2>
+        <p class="hero-description">{{ currentContent.description }}</p>
+
+        <!-- CTA Button -->
+        <a
+          href="assets/apk/iqraa.apk"
+          class="cta-button"
+          download="Iqraa.apk"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="button-icon">⬇</span>
+          {{ currentContent.downloadBtn }}
+          <span class="button-subtext">
+            ({{ currentContent.downloadSubtext }})
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview">
+      <div class="container">
+        <h3 class="section-title">{{ currentContent.overview }}</h3>
+        <p class="section-text">{{ currentContent.overviewText }}</p>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section class="components">
+      <div class="container">
+        <div class="components-grid">
+          <div *ngFor="let comp of currentContent.components" class="component-card">
+            <h4 class="component-title">{{ comp.title }}</h4>
+            <p class="component-desc">{{ comp.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="container">
+        <h3 class="section-title">{{ currentContent.aiTitle }}</h3>
+        <div class="points-grid">
+          <div *ngFor="let point of currentContent.aiPoints" class="point-item">
+            <div class="point-dot"></div>
+            <p>{{ point }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h3 class="section-title">{{ currentContent.featuresTitle }}</h3>
+        <div class="features-grid">
+          <div *ngFor="let feature of currentContent.features" class="feature-item">
+            <div class="feature-dot"></div>
+            <p>{{ feature }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+      <div class="container">
+        <h3 class="section-title">{{ currentContent.techTitle }}</h3>
+        <div class="tech-list">
+          <span *ngFor="let tech of currentContent.tech" class="tech-badge">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots">
+      <div class="container">
+        <h3 class="section-title">
+          {{ language === 'ar' ? 'لقطات من التطبيق' : (language === 'he' ? 'צילומי מסך' : 'Screenshots') }}
+        </h3>
+
+        <div class="screenshots-tabs">
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeShotsTab === 'student'"
+            (click)="setShotsTab('student')"
+          >
+            {{ language === 'ar' ? 'تطبيق الطالب' : (language === 'he' ? 'אפליקציית תלמיד' : 'Student App') }}
+          </button>
+
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeShotsTab === 'teacher'"
+            (click)="setShotsTab('teacher')"
+          >
+            {{ language === 'ar' ? 'تطبيق المعلم' : (language === 'he' ? 'אפליקציית מורה' : 'Teacher App') }}
+          </button>
+        </div>
+
+        <!-- Organized Grid -->
+        <div class="shots-grid">
+          <button
+            type="button"
+            class="shot-card"
+            *ngFor="let img of currentScreenshots; let i = index"
+            (click)="openLightbox(i)"
+          >
+            <img class="shot-img" [src]="img" alt="App screenshot" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Iqraa.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button type="button" class="lb-close" (click)="closeLightbox()">✕</button>
+
+      <button type="button" class="lb-nav left" (click)="prevShot()">‹</button>
+
+      <img class="lb-img" [src]="lightboxSrc" alt="Preview" />
+
+      <button type="button" class="lb-nav right" (click)="nextShot()">›</button>
+    </div>
+  </div>
+</div>

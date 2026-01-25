@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { SolarLink } from './pages/solar-link/solar-link';
+import { PortfolioComponent } from './pages/iqraa/iqraa';
+import { NotFound } from './pages/not-found/not-found';
+export const routes: Routes = [
+    { path: '', redirectTo: 'solar-link', pathMatch: 'full'},
+    { path: 'solar-link', component: SolarLink},
+    { path: 'iqraa', component: PortfolioComponent},
+    { path: '**', component: NotFound},
+];
