@@ -111,13 +111,13 @@ export class PortfolioComponent {
   // ✅ Your existing content (unchanged)
   content: Record<string, Content> = {
     en: {
-      title: 'Iqraa',
+      title: 'hy naqraa',
       subtitle: 'Smart Arabic Reading & Literacy System',
       description:
         'An intelligent educational platform that leverages AI to help students master Arabic reading with personalized feedback and progress tracking.',
       overview: 'Overview',
       overviewText:
-        'Iqraa is a comprehensive educational system designed to improve Arabic reading skills using deep learning and modern technology.',
+        'hy naqraa is a comprehensive educational system designed to improve Arabic reading skills using deep learning and modern technology.',
       components: [
         { title: 'Student App', desc: 'Interactive learning with AI-powered real-time feedback' },
         { title: 'Admin Dashboard', desc: 'Comprehensive analytics and classroom management tools' },
@@ -150,13 +150,13 @@ export class PortfolioComponent {
     },
 
     ar: {
-      title: 'إقرأ',
+      title: 'هيا نقرأ',
       subtitle: 'نظام ذكي لتعليم القراءة بالعربية',
       description:
         'منصة تعليمية تستخدم الذكاء الاصطناعي لمساعدة الطلاب على إتقان القراءة بالعربية مع تعليقات فورية وتتبع التقدم.',
       overview: 'نبذة عامة',
       overviewText:
-        'نظام إقرأ هو منصة تعليمية شاملة لتحسين مهارات القراءة باللغة العربية باستخدام التعلم العميق والتقنيات الحديثة.',
+        'نظام هيا نقرأ هو منصة تعليمية شاملة لتحسين مهارات القراءة باللغة العربية باستخدام التعلم العميق والتقنيات الحديثة.',
       components: [
         { title: 'تطبيق الطلاب', desc: 'تجربة تعليمية تفاعلية مع تعليقات مدعومة بالذكاء الاصطناعي' },
         { title: 'لوحة التحكم', desc: 'إدارة شاملة للفصول والإحصائيات' },
@@ -189,13 +189,13 @@ export class PortfolioComponent {
     },
 
     he: {
-      title: 'Iqraa',
+      title: 'hy naqraa',
       subtitle: 'מערכת חכמה להוראת קריאה בערבית',
       description:
         'פלטפורמה חינוכית המשתמשת בבינה מלאכותית לעזרה לתלמידים בשליטה בקריאה בערבית עם משוב בזמן אמת.',
       overview: 'סקירה כללית',
       overviewText:
-        'Iqraa היא מערכת חינוכית מקיפה לשיפור כישורי קריאה בערבית באמצעות למידה עמוקה וטכנולוגיה מודרנית.',
+        'hy naqraa היא מערכת חינוכית מקיפה לשיפור כישורי קריאה בערבית באמצעות למידה עמוקה וטכנולוגיה מודרנית.',
       components: [
         { title: 'אפליקציית הסלולר', desc: 'חוויה למידה אינטראקטיבית עם משוב בזמן אמת' },
         { title: 'לוח בקרה', desc: 'ניהול וניתוח נתונים של כיתות' },

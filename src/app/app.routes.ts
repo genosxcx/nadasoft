@@ -5,6 +5,6 @@ import { NotFound } from './pages/not-found/not-found';
 export const routes: Routes = [
     { path: '', redirectTo: 'solar-link', pathMatch: 'full'},
     { path: 'solar-link', component: SolarLink},
-    { path: 'iqraa', component: PortfolioComponent},
+    { path: 'hy-naqraa', component: PortfolioComponent},
     { path: '**', component: NotFound},
 ];
