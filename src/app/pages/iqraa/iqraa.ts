@@ -111,7 +111,7 @@ export class PortfolioComponent {
   // ✅ Your existing content (unchanged)
   content: Record<string, Content> = {
     en: {
-      title: 'hy naqraa',
+      title: 'hya naqraa',
       subtitle: 'Smart Arabic Reading & Literacy System',
       description:
         'An intelligent educational platform that leverages AI to help students master Arabic reading with personalized feedback and progress tracking.',
@@ -189,7 +189,7 @@ export class PortfolioComponent {
     },
 
     he: {
-      title: 'hy naqraa',
+      title: 'hya naqraa',
       subtitle: 'מערכת חכמה להוראת קריאה בערבית',
       description:
         'פלטפורמה חינוכית המשתמשת בבינה מלאכותית לעזרה לתלמידים בשליטה בקריאה בערבית עם משוב בזמן אמת.',
