@@ -678,3 +678,48 @@ $radius-lg: 22px;
     right: 6px;
   }
 }
+.component-card {
+  &.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 91, 187, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+  }
+  
+  .button-subtext {
+    display: block;
+    font-size: 0.85em;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+}

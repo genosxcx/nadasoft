@@ -4,14 +4,15 @@
     <div class="header-container">
       <div class="header-title">{{ currentContent.title }}</div>
       <div class="language-switcher">
-        <button
-          *ngFor="let lang of languages"
-          [class.active]="language === lang.code"
-          (click)="changeLanguage(lang.code)"
-          class="lang-btn"
-        >
-          {{ lang.label }}
-        </button>
+        @for (lang of languages; track lang.code) {
+          <button
+            [class.active]="language === lang.code"
+            (click)="changeLanguage(lang.code)"
+            class="lang-btn"
+          >
+            {{ lang.label }}
+          </button>
+        }
       </div>
     </div>
   </header>
@@ -24,23 +25,6 @@
         <h1 class="hero-title">{{ currentContent.title }}</h1>
         <h2 class="hero-subtitle">{{ currentContent.subtitle }}</h2>
         <p class="hero-description">{{ currentContent.description }}</p>
-
-        <!-- CTA Button -->
-
-<a
-  href="https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk"
-  class="cta-button"
-  target="_blank"
-  rel="noopener"
->
-  <span class="button-icon">⬇</span>
-  {{ currentContent.downloadBtn }}
-  <span class="button-subtext">
-    ({{ currentContent.downloadSubtext }})
-  </span>
-</a>
-
-
       </div>
     </section>
 
@@ -56,10 +40,33 @@
     <section class="components">
       <div class="container">
         <div class="components-grid">
-          <div *ngFor="let comp of currentContent.components" class="component-card">
-            <h4 class="component-title">{{ comp.title }}</h4>
-            <p class="component-desc">{{ comp.desc }}</p>
-          </div>
+          @for (comp of currentContent.components; track $index; let i = $index) {
+            <div class="component-card">
+              <div 
+                class="component-header"
+                [class.clickable]="comp.link"
+                (click)="onComponentClick(comp)"
+              >
+                <h4 class="component-title">{{ comp.title }}</h4>
+                <p class="component-desc">{{ comp.desc }}</p>
+              </div>
+
+              @if (i === 0) {
+                <a
+                  href="https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk"
+                  class="cta-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="button-icon">⬇</span>
+                  {{ currentContent.downloadBtn }}
+                  <span class="button-subtext">
+                    ({{ currentContent.downloadSubtext }})
+                  </span>
+                </a>
+              }
+            </div>
+          }
         </div>
       </div>
     </section>
@@ -69,10 +76,12 @@
       <div class="container">
         <h3 class="section-title">{{ currentContent.aiTitle }}</h3>
         <div class="points-grid">
-          <div *ngFor="let point of currentContent.aiPoints" class="point-item">
-            <div class="point-dot"></div>
-            <p>{{ point }}</p>
-          </div>
+          @for (point of currentContent.aiPoints; track $index) {
+            <div class="point-item">
+              <div class="point-dot"></div>
+              <p>{{ point }}</p>
+            </div>
+          }
         </div>
       </div>
     </section>
@@ -82,10 +91,12 @@
       <div class="container">
         <h3 class="section-title">{{ currentContent.featuresTitle }}</h3>
         <div class="features-grid">
-          <div *ngFor="let feature of currentContent.features" class="feature-item">
-            <div class="feature-dot"></div>
-            <p>{{ feature }}</p>
-          </div>
+          @for (feature of currentContent.features; track $index) {
+            <div class="feature-item">
+              <div class="feature-dot"></div>
+              <p>{{ feature }}</p>
+            </div>
+          }
         </div>
       </div>
     </section>
@@ -95,13 +106,16 @@
       <div class="container">
         <h3 class="section-title">{{ currentContent.techTitle }}</h3>
         <div class="tech-list">
-          <span *ngFor="let tech of currentContent.tech" class="tech-badge">
-            {{ tech }}
-          </span>
+          @for (tech of currentContent.tech; track $index) {
+            <span class="tech-badge">
+              {{ tech }}
+            </span>
+          }
         </div>
       </div>
     </section>
 
+    <!-- Screenshots Section -->
     <section class="screenshots">
       <div class="container">
         <h3 class="section-title">
@@ -130,35 +144,37 @@
 
         <!-- Organized Grid -->
         <div class="shots-grid">
-          <button
-            type="button"
-            class="shot-card"
-            *ngFor="let img of currentScreenshots; let i = index"
-            (click)="openLightbox(i)"
-          >
-            <img class="shot-img" [src]="img" alt="App screenshot" loading="lazy" />
-          </button>
+          @for (img of currentScreenshots; track $index; let i = $index) {
+            <button
+              type="button"
+              class="shot-card"
+              (click)="openLightbox(i)"
+            >
+              <img class="shot-img" [src]="img" alt="App screenshot" loading="lazy" />
+            </button>
+          }
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 hya-naqraa</p>
     </div>
   </footer>
 
-  <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
-    <div class="lightbox-content" (click)="$event.stopPropagation()">
-      <button type="button" class="lb-close" (click)="closeLightbox()">✕</button>
-
-      <button type="button" class="lb-nav left" (click)="prevShot()">‹</button>
-
-      <img class="lb-img" [src]="lightboxSrc" alt="Preview" />
-
-      <button type="button" class="lb-nav right" (click)="nextShot()">›</button>
+  <!-- Lightbox Modal -->
+  @if (lightboxOpen) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <button type="button" class="lb-close" (click)="closeLightbox()">✕</button>
+        <button type="button" class="lb-nav left" (click)="prevShot()">‹</button>
+        <img class="lb-img" [src]="lightboxSrc" alt="Preview" />
+        <button type="button" class="lb-nav right" (click)="nextShot()">›</button>
+      </div>
     </div>
-  </div>
+  }
 </div>

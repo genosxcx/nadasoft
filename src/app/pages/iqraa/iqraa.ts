@@ -9,6 +9,7 @@ interface Language {
 interface ContentComponentItem {
   title: string;
   desc: string;
+  link?: string;
 }
 
 interface Content {
@@ -119,10 +120,10 @@ export class PortfolioComponent {
       overviewText:
         'hy naqraa is a comprehensive educational system designed to improve Arabic reading skills using deep learning and modern technology.',
       components: [
-        { title: 'Student App', desc: 'Interactive learning with AI-powered real-time feedback' },
-        { title: 'Admin Dashboard', desc: 'Comprehensive analytics and classroom management tools' },
-        { title: 'Role-Based Access', desc: 'Separate logins for principals and teachers' }
-      ],
+  { title: 'Student App', desc: 'Interactive learning with AI-powered real-time feedback' },
+  { title: 'Admin Dashboard App', desc: 'Comprehensive analytics and classroom management tools' },
+  { title: 'Admin Dashboard Web', desc: 'Web-based admin panel for school management', link: 'https://school-admin-dashboard.pages.dev/admin' }
+],
       aiTitle: 'How It Works',
       aiPoints: [
         'Deep learning models trained on Arabic speech data',
@@ -158,10 +159,10 @@ export class PortfolioComponent {
       overviewText:
         'نظام هيا نقرأ هو منصة تعليمية شاملة لتحسين مهارات القراءة باللغة العربية باستخدام التعلم العميق والتقنيات الحديثة.',
       components: [
-        { title: 'تطبيق الطلاب', desc: 'تجربة تعليمية تفاعلية مع تعليقات مدعومة بالذكاء الاصطناعي' },
-        { title: 'لوحة التحكم', desc: 'إدارة شاملة للفصول والإحصائيات' },
-        { title: 'صلاحيات متعددة', desc: 'تسجيلات منفصلة للمدير والمعلم' }
-      ],
+  { title: 'تطبيق الطالب', desc: 'تجربة تعليمية تفاعلية مع تعليقات مدعومة بالذكاء الاصطناعي' },
+  { title: 'تطبيق لوحة التحكم', desc: 'إدارة شاملة للفصول والإحصائيات' },
+  { title: 'لوحة التحكم ويب', desc: 'لوحة إدارة على الويب لإدارة المدرسة', link: 'https://school-admin-dashboard.pages.dev/admin' }
+],
       aiTitle: 'كيف يعمل',
       aiPoints: [
         'نماذج تعلم عميق مدربة على بيانات النطق العربي',
@@ -197,10 +198,10 @@ export class PortfolioComponent {
       overviewText:
         'hy naqraa היא מערכת חינוכית מקיפה לשיפור כישורי קריאה בערבית באמצעות למידה עמוקה וטכנולוגיה מודרנית.',
       components: [
-        { title: 'אפליקציית הסלולר', desc: 'חוויה למידה אינטראקטיבית עם משוב בזמן אמת' },
-        { title: 'לוח בקרה', desc: 'ניהול וניתוח נתונים של כיתות' },
-        { title: 'גישה מדורגת', desc: 'התחברות נפרדת למנהל ולמורה' }
-      ],
+  { title: 'אפליקציית תלמיד', desc: 'חוויה למידה אינטראקטיבית עם משוב בזמן אמת' },
+  { title: 'אפליקציית לוח בקרה', desc: 'ניהול וניתוח נתונים של כיתות' },
+  { title: 'לוח בקרה ווב', desc: 'פנל ניהול מבוסס אינטרנט', link: 'https://school-admin-dashboard.pages.dev/admin' }
+],
       aiTitle: 'איך זה עובד',
       aiPoints: [
         'מודלים מאומנים על נתוני דיבור בערבית',
@@ -243,4 +244,12 @@ export class PortfolioComponent {
   changeLanguage(lang: string): void {
     this.language = lang;
   }
+  onComponentClick(comp: any) {
+  if (comp.link) {
+    window.open(comp.link, '_blank');
+  }
+}
+downloadAPK() {
+  window.open('https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk', '_blank');
+}
 }
