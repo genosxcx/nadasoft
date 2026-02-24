@@ -10,6 +10,7 @@ interface ContentComponentItem {
   title: string;
   desc: string;
   link?: string;
+  downloadLink?: string;
 }
 
 interface Content {
@@ -120,9 +121,21 @@ export class PortfolioComponent {
       overviewText:
         'hy naqraa is a comprehensive educational system designed to improve Arabic reading skills using deep learning and modern technology.',
       components: [
-  { title: 'Student App', desc: 'Interactive learning with AI-powered real-time feedback' },
-  { title: 'Admin Dashboard App', desc: 'Comprehensive analytics and classroom management tools' },
-  { title: 'Admin Dashboard Web', desc: 'Web-based admin panel for school management', link: 'https://school-admin-dashboard.pages.dev/admin' }
+  { 
+    title: 'Student App', 
+    desc: 'Interactive learning with AI-powered real-time feedback',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk'
+  },
+  { 
+    title: 'Admin Dashboard App', 
+    desc: 'Comprehensive analytics and classroom management tools',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/admin-v1.0.0/app-release-3.apk'
+  },
+  { 
+    title: 'Admin Dashboard Web', 
+    desc: 'Web-based admin panel for school management', 
+    link: 'https://school-admin-dashboard.pages.dev/admin' 
+  }
 ],
       aiTitle: 'How It Works',
       aiPoints: [
@@ -159,9 +172,21 @@ export class PortfolioComponent {
       overviewText:
         'نظام هيا نقرأ هو منصة تعليمية شاملة لتحسين مهارات القراءة باللغة العربية باستخدام التعلم العميق والتقنيات الحديثة.',
       components: [
-  { title: 'تطبيق الطالب', desc: 'تجربة تعليمية تفاعلية مع تعليقات مدعومة بالذكاء الاصطناعي' },
-  { title: 'تطبيق لوحة التحكم', desc: 'إدارة شاملة للفصول والإحصائيات' },
-  { title: 'لوحة التحكم ويب', desc: 'لوحة إدارة على الويب لإدارة المدرسة', link: 'https://school-admin-dashboard.pages.dev/admin' }
+  { 
+    title: 'تطبيق الطالب', 
+    desc: 'تجربة تعليمية تفاعلية مع تعليقات مدعومة بالذكاء الاصطناعي',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk'
+  },
+  { 
+    title: 'تطبيق لوحة التحكم', 
+    desc: 'إدارة شاملة للفصول والإحصائيات',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/admin-v1.0.0/app-release-3.apk'
+  },
+  { 
+    title: 'لوحة التحكم ويب', 
+    desc: 'لوحة إدارة على الويب لإدارة المدرسة', 
+    link: 'https://school-admin-dashboard.pages.dev/admin' 
+  }
 ],
       aiTitle: 'كيف يعمل',
       aiPoints: [
@@ -198,9 +223,21 @@ export class PortfolioComponent {
       overviewText:
         'hy naqraa היא מערכת חינוכית מקיפה לשיפור כישורי קריאה בערבית באמצעות למידה עמוקה וטכנולוגיה מודרנית.',
       components: [
-  { title: 'אפליקציית תלמיד', desc: 'חוויה למידה אינטראקטיבית עם משוב בזמן אמת' },
-  { title: 'אפליקציית לוח בקרה', desc: 'ניהול וניתוח נתונים של כיתות' },
-  { title: 'לוח בקרה ווב', desc: 'פנל ניהול מבוסס אינטרנט', link: 'https://school-admin-dashboard.pages.dev/admin' }
+  { 
+    title: 'אפליקציית תלמיד', 
+    desc: 'חוויה למידה אינטראקטיבית עם משוב בזמן אמת',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk'
+  },
+  { 
+    title: 'אפליקציית לוח בקרה', 
+    desc: 'ניהול וניתוח נתונים של כיתות',
+    downloadLink: 'https://github.com/genosxcx/nadasoft/releases/download/admin-v1.0.0/app-release-3.apk'
+  },
+  { 
+    title: 'לוח בקרה ווב', 
+    desc: 'פנל ניהול מבוסס אינטרנט', 
+    link: 'https://school-admin-dashboard.pages.dev/admin' 
+  }
 ],
       aiTitle: 'איך זה עובד',
       aiPoints: [

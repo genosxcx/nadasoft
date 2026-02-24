@@ -45,23 +45,37 @@
               <div 
                 class="component-header"
                 [class.clickable]="comp.link"
-                (click)="onComponentClick(comp)"
               >
                 <h4 class="component-title">{{ comp.title }}</h4>
                 <p class="component-desc">{{ comp.desc }}</p>
               </div>
 
-              @if (i === 0) {
+              @if (i === 0 || i === 1) {
                 <a
-                  href="https://github.com/genosxcx/nadasoft/releases/download/v1.0.0/iqraa.apk"
+                  [href]="comp.downloadLink"
                   class="cta-button"
                   target="_blank"
                   rel="noopener"
                 >
                   <span class="button-icon">⬇</span>
-                  {{ currentContent.downloadBtn }}
+                  Download APK
                   <span class="button-subtext">
-                    ({{ currentContent.downloadSubtext }})
+                    (Android 8.0 or later)
+                  </span>
+                </a>
+              }
+
+              @if (i === 2) {
+                <a
+                  [href]="comp.link"
+                  class="cta-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="button-icon">→</span>
+                  Visit Website
+                  <span class="button-subtext">
+                    (Web-based)
                   </span>
                 </a>
               }
@@ -156,7 +170,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
